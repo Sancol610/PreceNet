@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="../css/styles_login.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="login-box">
+      
+      <!-- Radios invisibles -->
+      <input type="radio" id="tab-register" name="tab" hidden />
+      <input type="radio" id="tab-login" name="tab" hidden checked />
+      
+      <!-- Labels como tabs -->
+      <div class="tabs">
+        <label for="tab-register" class="tab" id="label-register">Regístrate</label>
+        <label for="tab-login" class="tab" id="label-login">Inicia sesión</label>
+      </div>
+
+      <!-- Formularios -->
+      <form class="form-register" action="../DashboardWEB/dashboard.html" method="get">
+        <input type="text" placeholder="Nombre" class="name-field" required />
+        <input type="text" placeholder="Apellido" class="name-field" required />
+        <input type="email" placeholder="E-mail" required />
+        <input type="password" placeholder="Contraseña" required />
+        <button type="submit" class="login-button">Registrarse</button>
+      </form>
+
+      <form class="form-login" action="../DashboardWEB/dashboard.html" method="get">
+        <input type="email" placeholder="E-mail" required />
+        <input type="password" placeholder="Contraseña" required />
+        <button type="submit" class="login-button">Iniciar sesión</button>
+      </form>
+      
+    </div>
+  </div>
+</body>
+</html>

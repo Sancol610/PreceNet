@@ -1,0 +1,159 @@
+/* Base */
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Fondo degradado en body */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Reemplazo background-color por degradado */
+  background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 30%, #f6b93b 100%);
+  color: white; /* texto blanco por defecto */
+}
+
+/* Caja blanca con sombra */
+.overlay {
+  background: white; /* mantenemos blanco para la caja */
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  padding: 30px;
+  color: black; /* texto negro dentro de la caja para contraste */
+}
+
+.login-box .tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+
+.tab.active {
+  border-bottom: 2px solid #000;
+  color: black;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #555;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #2a5298;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  margin: 15px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.help {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Tabs estilo */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* Cambiar estilo si el radio asociado está chequeado */
+#tab-register:checked ~ .tabs #label-register,
+#tab-login:checked ~ .tabs #label-login {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+/* Mostrar solo el form activo */
+.form-register, .form-login {
+  display: none;
+}
+
+#tab-register:checked ~ .form-register {
+  display: block;
+}
+
+#tab-login:checked ~ .form-login {
+  display: block;
+}
+
+/* Por defecto ocultamos los campos nombre y apellido */
+.name-field {
+  width: 100%;           /* Igual ancho */
+  box-sizing: border-box; /* Para que padding y borde entren en ese ancho */
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+/* Cuando está activo el registro, mostramos nombre y apellido */
+#tab-register:checked ~ .form-register .name-field {
+  visibility: visible;
+  height: auto;
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura el mismo box model */
+}
