@@ -178,3 +178,56 @@ section .boton {
 .container {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .novedades,
+  .section-centrada {
+    width: 100%;
+  }
+
+  .slides {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .slide h3 {
+    font-size: 20px;
+  }
+
+  .slide p {
+    font-size: 16px;
+  }
+
+  .nav {
+    display: none; /* opcional: ocultamos flechas si no son necesarias */
+  }
+
+  .boton {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+
+  .profile-icon {
+    align-self: flex-end;
+  }
+}
