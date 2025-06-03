@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Dashboard</title>
-  <link rel="stylesheet" href="../css/styles_dashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles_dashboard.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
   <header class="header">
     <div class="logo">
-      <img src="../images/Logo.png" alt="Logo" class="footer-logo">
+      <img src="../images/Logo.png" alt="Logo" class="footer-logo" />
     </div>
-    <div class="welcome">Hola, Nombre</div>
+    <div class="welcome">Hola, Tati</div>
     <div class="profile-icon">
-    <a href="perfil.html">
-      <i class="fas fa-user fa-2x"></i>
-    </a>
-  </div>
-
+      <a href="perfil.html"><i class="fas fa-user fa-2x"></i></a>
+    </div>
   </header>
 
   <main class="content">
-    <section class="novedades">
-      <h2>Novedades</h2>
-      <div class="novedades-botones">
-        <button>Novedad 1</button>
-        <button>Novedad 2</button>
-        <button>Novedad 3</button>
-      </div>
-    </section>
+    <section class="novedades left-align">
+  <h2>Novedades</h2>
 
-    <section class="cursos">
+    <div class="slides">
+    <div class="slide">
+      <h3>🚍 Paro de Colectivos</h3>
+      <p>El martes 4 de junio no habrá servicio por una medida de fuerza gremial.</p>
+    </div>
+    <div class="slide">
+    <h3>📅 Entrega de Boletines</h3>
+    <p>La entrega de boletines correspondiente al primer trimestre será el viernes 6.</p>
+  </div>
+    <div class="slide">
+    <h3>🔌 Corte de Luz Programado</h3>
+    <p>El miércoles 5, desde las 9 hasta las 13 hs, habrá corte de energía en la zona del colegio.</p>
+  </div>
+    <div class="slide">
+    <h3>💻 Actualización de Equipos</h3>
+    <p>Se están instalando nuevas PCs en el laboratorio de informática para el ciclo lectivo 2025.</p>
+  </div>
+  </div>
+
+
+  <div class="nav">
+    <button class="nav-left">&#10094;</button>
+    <button class="nav-right">&#10095;</button>
+  </div>
+</section>
+
+
+    <section class="cursos section-centrada">
       <h2>Cursos</h2>
       <a href="cursos.html" class="boton">Ver cursos</a>
     </section>
 
-    <section class="comunicaciones">
+    <section class="comunicaciones section-centrada">
       <h2>Comunicaciones</h2>
       <a href="comunicaciones.html" class="boton">Comunicación</a>
     </section>
   </main>
+
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>

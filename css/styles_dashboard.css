@@ -11,7 +11,7 @@ body {
   background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 30%, #f6b93b 100%);
   padding: 40px;
   color: white;
-  font-size: 18px; /* Aumenta el tamaño base del texto */
+  font-size: 18px;
 }
 
 /* Header */
@@ -24,24 +24,19 @@ body {
 
 /* Logo */
 .logo img {
-  height: 60px; /* Más grande */
+  height: 60px;
 }
 
 /* Bienvenida */
 .welcome {
-  font-size: 24px; /* Más grande */
+  font-size: 24px;
   font-weight: bold;
 }
 
 
-/* Contenido principal */
-.content {
-  margin-top: 50px;
-}
-
 /* Secciones */
 section {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 /* Títulos */
@@ -51,28 +46,7 @@ h2 {
   color: white;
 }
 
-/* Botones de novedades */
-.novedades-botones {
-  display: flex;
-  gap: 25px;
-}
-
-.novedades-botones button {
-  padding: 20px 30px;
-  font-size: 20px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 10px;
-}
-
-.novedades-botones button:hover {
-  background-color: rgba(255, 255, 255, 0.35);
-}
-
-/* Otros botones */
+/* Botones */
 .boton {
   display: inline-block;
   padding: 20px 30px;
@@ -101,4 +75,102 @@ h2 {
 .profile-icon i {
   color: white;
   font-size: 28px;
+}
+.novedades {
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto; /* centrado horizontal */
+  margin-bottom: 20px; /* más espacio específico debajo del slide */
+}
+
+
+/* Slides container: flex para poner en fila */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content; /* ancho automático según cantidad de slides */
+  justify-content: flex-end;
+}
+
+/* Cada slide ocupa casi todo el ancho del contenedor menos un poco para la preview */
+.slide {
+  flex: 0 0 390px; /* ancho fijo para la novedad visible */
+  margin-right: 20px; /* espacio para que se vea un poco la siguiente */
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  user-select: none;
+}
+
+/* Último slide sin margen a la derecha */
+.slides .slide:last-child {
+  margin-right: 0;
+}
+
+/* Botones más chicos, a la izquierda y derecha */
+.nav {
+  position: absolute;
+  top: 67%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.nav button {
+  pointer-events: all;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.nav button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.section-centrada {
+  width: 800px;
+  margin: 0 auto;
+  text-align: auto;
+}
+
+/* Espacio entre título y botón */
+section .boton {
+   margin-bottom: 20px; 
+}
+
+
+.slide h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.slide p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+.nav button.nav-left {
+  margin-left: -6px; /* mueve un poco más a la izquierda */
+}
+
+.nav button.nav-right {
+  margin-right: -6px; /* mueve un poco más a la derecha */
 }
