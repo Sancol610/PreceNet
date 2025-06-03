@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación con Profesores</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1e3c72, #fdbb2d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 450px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+        }
+
+        .header .back-button {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .header img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            margin: 0 auto;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="location.href='../Pantalla4/pantalla4.html'">←</button>
+            <h1>Comunicación con Profesores</h1>
+            <img src="../images/Logo.png" alt="Logo">
+        </div>
+
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Mail</th>
+                        <th>Materias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pedro Lopez</td>
+                        <td>pedro@gmail.com</td>
+                        <td>Matemáticas, Física</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Garcia</td>
+                        <td>maria.garcia@gmail.com</td>
+                        <td>Lengua, Literatura</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Perez</td>
+                        <td>juan.perez@gmail.com</td>
+                        <td>Historia, Geografía</td>
+                    </tr>
+                    <tr>
+                        <td>Luisa Mendoza</td>
+                        <td>luisa.mendoza@gmail.com</td>
+                        <td>Biología, Química</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos Ramirez</td>
+                        <td>carlos.ramirez@gmail.com</td>
+                        <td>Educación Física, Música</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
