@@ -174,3 +174,7 @@ section .boton {
 .nav button.nav-right {
   margin-right: -6px; /* mueve un poco más a la derecha */
 }
+
+.container {
+  width: 100%;
+}
