@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalle del Alumno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #1e3c72, #2a5298, #f6b93b);
+      min-height: 100vh;
+      padding: 30px;
+      color: white;
+      font-size: 18px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .back-icon a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      text-decoration: none;
+    }
+
+    .back-icon i {
+      color: white;
+      font-size: 22px;
+    }
+
+    .title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .info-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .info-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .info-item {
+      margin-bottom: 15px;
+    }
+
+    .info-item label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .info-item span {
+      display: block;
+    }
+
+    /* Estilo para el botón informes académicos */
+    #btnInformes {
+      background-color: #f6b93b;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #2a5298;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #btnInformes:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="back-icon">
+      <a href="javascript:history.back()" title="Volver">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div>
+    <div class="title">Detalle del Alumno</div>
+    <div class="logo">
+      <img src="../images/Logo.png" alt="Logo" />
+    </div>
+  </header>
+
+  <div class="info-container">
+    <h2>Información del Alumno</h2>
+
+    <div class="info-item">
+      <label>Nombre:</label>
+      <span>Juan</span>
+    </div>
+    <div class="info-item">
+      <label>Apellido:</label>
+      <span>Pérez</span>
+    </div>
+    <div class="info-item">
+      <label>DNI:</label>
+      <span>12345678</span>
+    </div>
+    <div class="info-item">
+      <label>Fecha de Nacimiento:</label>
+      <span>15/03/2005</span>
+    </div>
+    <div class="info-item">
+      <label>Correo electrónico:</label>
+      <span>juan.perez@email.com</span>
+    </div>
+    <div class="info-item">
+      <label>Dirección:</label>
+      <span>Calle Falsa 123, Ciudad</span>
+    </div>
+    <div class="info-item">
+      <label>Teléfono:</label>
+      <span>+54 9 11 2345-6789</span>
+    </div>
+
+    <!-- Asistencias y Ausencias -->
+    <div class="info-item">
+      <label>Total de Asistencias:</label>
+      <span>148</span>
+    </div>
+    <div class="info-item">
+      <label>Total de Ausencias:</label>
+      <span>12</span>
+    </div>
+
+    <!-- Botón de Informes -->
+    <div style="text-align: center; margin-top: 30px;">
+      <button id="btnInformes" onclick="location.href='../CursoWEB/informesAcademicos.html'">Informes Académicos</button>
+    </div>
+  </div>
+
+</body>
+</html>

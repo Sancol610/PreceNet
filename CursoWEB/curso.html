@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalle del curso</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 30%, #f6b93b 100%);
+      color: white;
+      padding: 30px;
+      font-size: 18px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .back-icon a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      text-decoration: none;
+    }
+
+    .back-icon i {
+      color: white;
+      font-size: 22px;
+    }
+
+    .title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    main h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Estilos mejorados para horarios */
+    .horarios {
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .horarios h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 1.2px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      font-weight: 700;
+    }
+
+    .horarios table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 18px;
+    }
+
+    .horarios th, .horarios td {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      text-align: left;
+      color: #f0e68c;
+    }
+
+    .horarios th {
+      background-color: rgba(255, 255, 255, 0.25);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .horarios tr:last-child td {
+      border-bottom: none;
+    }
+
+    .horarios tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      cursor: default;
+    }
+
+    table#alumnos {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    #alumnos th, #alumnos td {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: left;
+    }
+
+    #alumnos th {
+      background-color: rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      color: white;
+    }
+
+    #alumnos tr:last-child td {
+      border-bottom: none;
+    }
+
+    #alumnos tr.presente {
+      background-color: rgba(0, 255, 0, 0.2);
+    }
+
+    #alumnos tr.ausente {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+
+    #alumnos tr:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+    }
+
+    .menu {
+      position: absolute;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      display: none;
+      z-index: 1000;
+      flex-direction: column;
+      min-width: 220px;
+      padding: 10px;
+      gap: 8px;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .menu button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #f4f4f4;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+
+    .menu button:hover {
+      background: #e0e0e0;
+    }
+
+    .menu button i {
+      font-size: 18px;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="back-icon">
+      <a href="../CursoWEB/Curso1.html" title="Volver a Cursos">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div>
+    <div class="title">Curso</div>
+    <div class="logo">
+      <img src="../images/Logo.png" alt="Logo" />
+    </div>
+  </header>
+
+  <main>
+    <h2>Lista de alumnos - Curso</h2>
+
+    <div class="horarios">
+      <h3>Horarios del Curso</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Día</th>
+            <th>Materia</th>
+            <th>Horario</th>
+            <th>Profesor/a</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lunes</td>
+            <td>Prácticas Profesionalizantes</td>
+            <td>7:45 – 11:15 (TM)</td>
+            <td>Berea C. / Tatiana</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Desarrollo de Sistemas</td>
+            <td>17:20 – 18:00</td>
+            <td>Berea C.</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Desarrollo de Sistemas</td>
+            <td>18:00 – 18:30</td>
+            <td>Berea C.</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Desarrollo de Sistemas</td>
+            <td>18:30 – 19:00</td>
+            <td>Berea C.</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Programación de Redes</td>
+            <td>19:00 – 19:30</td>
+            <td>Berea C.</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Ciencia y Tecnología</td>
+            <td>19:30 – 20:10</td>
+            <td>Luzzi Mariano</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Administración de Redes</td>
+            <td>20:10 – 20:40</td>
+            <td>Morell Silvia</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Matemática</td>
+            <td>20:40 – 22:40</td>
+            <td>Vallejos Briant</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <table id="alumnos">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>Fecha Nac.</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="alumnos-lista">
+        <tr class="ausente" data-nombre="Juan" data-dni="12345678" onclick="mostrarMenu(event, this)">
+          <td>Juan</td>
+          <td>Pérez</td>
+          <td>12345678</td>
+          <td>15/03/2005</td>
+          <td class="estado">Ausente</td>
+        </tr>
+        <tr class="ausente" data-nombre="María" data-dni="87654321" onclick="mostrarMenu(event, this)">
+          <td>María</td>
+          <td>Gómez</td>
+          <td>87654321</td>
+          <td>02/07/2006</td>
+          <td class="estado">Ausente</td>
+        </tr>
+        <tr class="ausente" data-nombre="Lucas" data-dni="23456789" onclick="mostrarMenu(event, this)">
+          <td>Lucas</td>
+          <td>Fernández</td>
+          <td>23456789</td>
+          <td>28/11/2005</td>
+          <td class="estado">Ausente</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="menu-opciones" class="menu">
+      <button id="toggle-asistencia" onclick="toggleAsistencia()">
+        <i class="fas fa-user-check"></i> Marcar como presente
+      </button>
+      <button onclick="verInfo()">
+        <i class="fas fa-info-circle"></i> Ver información detallada
+      </button>
+    </div>
+  </main>
+
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const curso = getQueryParam('curso') || 'Curso desconocido';
+      document.querySelector('.title').textContent = curso;
+      document.querySelector('main h2').textContent = `Lista de alumnos - ${curso}`;
+    });
+
+    let filaSeleccionada = null;
+
+    function mostrarMenu(event, fila) {
+      event.stopPropagation();
+      filaSeleccionada = fila;
+
+      const estado = fila.querySelector('.estado').textContent;
+      const toggleBtn = document.getElementById('toggle-asistencia');
+
+      if (estado === 'Presente') {
+        toggleBtn.innerHTML = '<i class="fas fa-user-times"></i> Marcar como ausente';
+      } else {
+        toggleBtn.innerHTML = '<i class="fas fa-user-check"></i> Marcar como presente';
+      }
+
+      const menu = document.getElementById('menu-opciones');
+      menu.style.display = 'flex';
+      menu.style.top = event.pageY + 'px';
+      menu.style.left = event.pageX + 'px';
+    }
+
+    function toggleAsistencia() {
+      if (filaSeleccionada) {
+        const estadoCelda = filaSeleccionada.querySelector('.estado');
+        const esPresente = estadoCelda.textContent === 'Presente';
+
+        estadoCelda.textContent = esPresente ? 'Ausente' : 'Presente';
+        filaSeleccionada.classList.toggle('presente', !esPresente);
+        filaSeleccionada.classList.toggle('ausente', esPresente);
+      }
+      cerrarMenu();
+    }
+
+    function verInfo() {
+      if (filaSeleccionada) {
+        const dni = filaSeleccionada.dataset.dni;
+        window.location.href = `../CursoWEB/detalle_alumno.html?dni=${dni}`;
+      }
+    }
+
+    function cerrarMenu() {
+      document.getElementById('menu-opciones').style.display = 'none';
+      filaSeleccionada = null;
+    }
+
+    document.addEventListener('click', cerrarMenu);
+  </script>
+</body>
+</html>
